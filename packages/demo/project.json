@@ -1,7 +1,7 @@
 {
   "name": "demo",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "demo/src",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/demo/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -10,16 +10,16 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/demo",
-        "index": "demo/src/index.html",
+        "outputPath": "dist/packages/demo",
+        "index": "packages/demo/src/index.html",
         "baseHref": "/",
-        "main": "demo/src/main.tsx",
-        "tsConfig": "demo/tsconfig.app.json",
-        "assets": ["demo/src/favicon.ico", "demo/src/assets"],
-        "styles": ["demo/src/styles.css"],
+        "main": "packages/demo/src/main.tsx",
+        "tsConfig": "packages/demo/tsconfig.app.json",
+        "assets": ["packages/demo/src/favicon.ico", "packages/demo/src/assets"],
+        "styles": ["packages/demo/src/styles.css"],
         "scripts": [],
         "isolatedConfig": true,
-        "webpackConfig": "demo/webpack.config.js"
+        "webpackConfig": "packages/demo/webpack.config.js"
       },
       "configurations": {
         "development": {
@@ -31,8 +31,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "demo/src/environments/environment.ts",
-              "with": "demo/src/environments/environment.prod.ts"
+              "replace": "packages/demo/src/environments/environment.ts",
+              "with": "packages/demo/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -65,14 +65,14 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["demo/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["packages/demo/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "demo/jest.config.ts",
+        "jestConfig": "packages/demo/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
